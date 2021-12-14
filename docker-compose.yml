@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+ pyspark:
+  image: jupyter/pyspark-notebook:latest
+  ports:
+   - "8888:8888"
+   - "4040:4040"
+   - "4041:4041"
+  volumes:
+   - D:/TechX/pyspark_container/pyspark_container/:/home/jovyan/work/
+  container_name: spark_notebook
+  command: "start-notebook.sh \
+    --NotebookApp.password='' \
+    --NotebookApp.notebook_dir='/home/jovyan/work/'"
